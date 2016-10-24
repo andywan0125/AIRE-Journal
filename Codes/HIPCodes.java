@@ -1,4 +1,4 @@
-	public static void HIP(HashMap<String, String[]> allPath, String[][] trainingDataset, String[][] testDataset) throws IOException{
+   public static void HIP(HashMap<String, String[]> allPath, String[][] trainingDataset, String[][] testDataset) throws IOException{
 		
 	//-------------Initialize the selection status of all features as 'Selected'--------------
         HashMap<String, String> hmStatus = new HashMap<String, String>();
@@ -119,4 +119,4 @@
         	      hmStatus.put(entryitersethmStatus.getKey(), "Selected");
              }
          }
-	}
+    }
