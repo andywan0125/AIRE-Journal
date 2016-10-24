@@ -1,5 +1,6 @@
    public static void MR(HashMap<String, String[]> allPath, String[][] trainingDataset, String[][] testDataset) throws IOException{
-			
+	
+	//-------------Calculate the relevance value of individual features by training dataset--------------
 	String[][] MeasurementResults = MeasurementResults(trainingDataset);
 	HashMap<String, String> hmRelevanceMeasurement = new HashMap<String, String>();
 
@@ -7,11 +8,13 @@
         	hmRelevanceMeasurement.put(MeasurementResults[i][0], MeasurementResults[i][5]);
         }
         
+	//-------------Initialize the selection status of all features as 'Selected'--------------
         HashMap<String, String> hmStatus = new HashMap<String, String>();
         for(int i=1; i<MeasurementResults.length; i++){
       	  hmStatus.put(MeasurementResults[i][0], "Selected");
         }
         
+	//--------------------------Conduct feature selection by MR-----------------------------
         ArrayList<String> ForwardList= new ArrayList<String>();
         ArrayList<String> BackwardList= new ArrayList<String>();
         
@@ -66,7 +69,7 @@
       			  }
              }
         
-        
+         //-------arrayListSelectedGOTermsForFinal contains the set of finally selected features by MR------
          ArrayList<String> arrayListSelectedGOTermsFinal= new ArrayList<String>();
          Set<Entry<String,String>> sethmStatusFinal=hmStatus.entrySet();
          Iterator<Entry<String, String>> itersethmStatusFinal = sethmStatusFinal.iterator();
@@ -77,6 +80,7 @@
        	       }
          }
          
+         //----set all features' selection status as 'Selected' for preparing on next instance's feature selection--------------
          Set<Entry<String,String>> sethmStatus=hmStatus.entrySet();
          Iterator<Entry<String, String>> itersethmStatus = sethmStatus.iterator();
          while(itersethmStatus.hasNext()){
