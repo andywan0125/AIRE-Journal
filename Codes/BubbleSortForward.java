@@ -1,7 +1,7 @@
-	public static String BubbleSortForward(String[] Attributes, HashMap<String, String> hmRelevanceMeasurement){
+   public static String BubbleSortForward(String[] Attributes, HashMap<String, String> hmRelevanceMeasurement){
 		
-		String maxRele=null;
-		HashMap<String, String> hmPositionSameMaxRele = new HashMap<String, String>();
+	String maxRele=null;
+	HashMap<String, String> hmPositionSameMaxRele = new HashMap<String, String>();
         String[][] Relevance = new String[Attributes.length][2]; 
         
         for(int i=0; i<Attributes.length; i++){
@@ -45,10 +45,11 @@
            }else{
         	  maxRele=arrayListSameMaxRele.get(0); 
            }
-           arrayListSameMaxRele.clear();
-	    }else{
-	    	maxRele=Relevance[0][0];
-	    }
-		  
-		return maxRele;
-	}
+		
+         arrayListSameMaxRele.clear();
+		
+	 }else{
+	       maxRele=Relevance[0][0];
+	 }	  
+	return maxRele;
+   }
