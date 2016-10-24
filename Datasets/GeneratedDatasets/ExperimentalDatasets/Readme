@@ -1,1 +1,7 @@
+a. This repository includes the Java sourcecode for both HIP and MR feature selection algorithms.
 
+b. The inputs of HIP and MR consist of the information of all paths in the GO DAG, the training dataset and the testing dataset.
+
+c. The outputs of HIP and MR are sets of features selected for individual testing instances, whereas in the sourcecode, there is no return value being defined.
+
+d. There are three other methods are called by MR method, i.e. MeasurementResults, BubbleSortForward and BubbleSortBackward.
