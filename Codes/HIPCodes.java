@@ -1,10 +1,12 @@
 	public static void HIP(HashMap<String, String[]> allPath, String[][] trainingDataset, String[][] testDataset) throws IOException{
 		
+		//-------------Initialize the selection status of all features as 'Selected'--------------
         HashMap<String, String> hmStatus = new HashMap<String, String>();
         for(int i=1; i<trainingDataset.length-1; i++){
       	  hmStatus.put(trainingDataset[i][0], "Selected");
         }
-        
+		
+        //-------------Initialize ancestors and descendants sets for all individual GO terms--------------
         HashMap<String, String[]> hmAncestors = new HashMap<String, String[]>();
         HashMap<String, String[]> hmDescendants = new HashMap<String, String[]>();
         ArrayList<String> arrayListAncestors= new ArrayList<String>();
@@ -82,6 +84,7 @@
         	
         }
         
+		//--------------------------Conduct feature selection by HIP-----------------------------
         for(int column=1; column<testDataset[0].length; column++){
             for(int i=0; i<testDataset.length-1; i++){
             	if(testDataset[i][column].equals("1")){
@@ -99,16 +102,19 @@
             	}
              }
               
-             ArrayList<String> arrayListSelectedGOTermsForC= new ArrayList<String>();
-             Set<Entry<String,String>> sethmStatus333=hmStatus.entrySet();
-             Iterator<Entry<String, String>> itersethmStatus333 = sethmStatus333.iterator();
-             while(itersethmStatus333.hasNext()){
-       	           Entry<String, String> entryitersethmStatus333 = itersethmStatus333.next();
-       	           if(entryitersethmStatus333.getValue().equals("Selected")){
-       		          arrayListSelectedGOTermsForC.add(entryitersethmStatus333.getKey());
+             ArrayList<String> arrayListSelectedGOTermsFinal= new ArrayList<String>();
+             Set<Entry<String,String>> sethmStatusFinal=hmStatus.entrySet();
+             Iterator<Entry<String, String>> itersethmStatusFinal = sethmStatusFinal.iterator();
+             while(itersethmStatusFinal.hasNext()){
+       	           Entry<String, String> entryitersethmStatusFinal = itersethmStatusFinal.next();
+       	           if(entryitersethmStatusFinal.getValue().equals("Selected")){
+       		          arrayListSelectedGOTermsForFinal.add(entryitersethmStatusFinal.getKey());
        	           }
              }
          
+			 //arrayList contains the set of finally selected features by HIP
+			
+			 //----set all features' selection status as 'Selected' for preparing on next instance's feature selection--------------
              Set<Entry<String,String>> sethmStatus=hmStatus.entrySet();
              Iterator<Entry<String, String>> itersethmStatus = sethmStatus.iterator();
              while(itersethmStatus.hasNext()){
