@@ -67,21 +67,21 @@
              }
         
         
-         ArrayList<String> arrayListSelectedGOTermsForC= new ArrayList<String>();
+         ArrayList<String> arrayListSelectedGOTermsFinal= new ArrayList<String>();
          Set<Entry<String,String>> sethmStatusFinal=hmStatus.entrySet();
          Iterator<Entry<String, String>> itersethmStatusFinal = sethmStatusFinal.iterator();
          while(itersethmStatusFinal.hasNext()){
-       	  Entry<String, String> entryitersethmStatusFinal = itersethmStatusFinal.next();
-       	  if(entryitersethmStatusFinal.getValue().equals("Selected")){
-       		  arrayListSelectedGOTermsForC.add(entryitersethmStatusFinal.getKey());
-       	  }
+       	       Entry<String, String> entryitersethmStatusFinal = itersethmStatusFinal.next();
+       	       if(entryitersethmStatusFinal.getValue().equals("Selected")){
+       		  arrayListSelectedGOTermsFinal.add(entryitersethmStatusFinal.getKey());
+       	       }
          }
          
          Set<Entry<String,String>> sethmStatus=hmStatus.entrySet();
          Iterator<Entry<String, String>> itersethmStatus = sethmStatus.iterator();
          while(itersethmStatus.hasNext()){
-        	 Entry<String, String> entryitersethmStatus = itersethmStatus.next();
-        	 hmStatus.put(entryitersethmStatus.getKey(), "Selected");
+               Entry<String, String> entryitersethmStatus = itersethmStatus.next();
+               hmStatus.put(entryitersethmStatus.getKey(), "Selected");
          }
       }		
    }
