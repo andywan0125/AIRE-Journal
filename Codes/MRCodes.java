@@ -1,7 +1,7 @@
-	public static void MR(HashMap<String, String[]> allPath, String[][] trainingDataset, String[][] testDataset) throws IOException{
+   public static void MR(HashMap<String, String[]> allPath, String[][] trainingDataset, String[][] testDataset) throws IOException{
 			
-		String[][] MeasurementResults = MeasurementResults(trainingDataset);
-		HashMap<String, String> hmRelevanceMeasurement = new HashMap<String, String>();
+	String[][] MeasurementResults = MeasurementResults(trainingDataset);
+	HashMap<String, String> hmRelevanceMeasurement = new HashMap<String, String>();
 
         for(int i=1; i<MeasurementResults.length; i++){
         	hmRelevanceMeasurement.put(MeasurementResults[i][0], MeasurementResults[i][5]);
@@ -68,12 +68,12 @@
         
         
          ArrayList<String> arrayListSelectedGOTermsForC= new ArrayList<String>();
-         Set<Entry<String,String>> sethmStatus333=hmStatus.entrySet();
-         Iterator<Entry<String, String>> itersethmStatus333 = sethmStatus333.iterator();
-         while(itersethmStatus333.hasNext()){
-       	  Entry<String, String> entryitersethmStatus333 = itersethmStatus333.next();
-       	  if(entryitersethmStatus333.getValue().equals("Selected")){
-       		  arrayListSelectedGOTermsForC.add(entryitersethmStatus333.getKey());
+         Set<Entry<String,String>> sethmStatusFinal=hmStatus.entrySet();
+         Iterator<Entry<String, String>> itersethmStatusFinal = sethmStatusFinal.iterator();
+         while(itersethmStatusFinal.hasNext()){
+       	  Entry<String, String> entryitersethmStatusFinal = itersethmStatusFinal.next();
+       	  if(entryitersethmStatusFinal.getValue().equals("Selected")){
+       		  arrayListSelectedGOTermsForC.add(entryitersethmStatusFinal.getKey());
        	  }
          }
          
@@ -83,6 +83,5 @@
         	 Entry<String, String> entryitersethmStatus = itersethmStatus.next();
         	 hmStatus.put(entryitersethmStatus.getKey(), "Selected");
          }
-         
       }		
-	}
+   }
