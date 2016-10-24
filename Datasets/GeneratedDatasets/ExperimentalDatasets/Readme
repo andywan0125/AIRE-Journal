@@ -1,7 +1,23 @@
-a. This repository includes the Java sourcecode for both HIP and MR feature selection algorithms.
 
-b. The inputs of HIP and MR consist of the information of all paths in the GO DAG, the training dataset and the testing dataset.
+This repository includes all 28 experimental datasets used in the paper [1,2].
 
-c. The outputs of HIP and MR are sets of features selected for individual testing instances, whereas in the sourcecode, there is no return value being defined.
+--------------------------------------------------------------------------------------------------
 
-d. There are three other methods are called by MR method, i.e. MeasurementResults, BubbleSortForward and BubbleSortBackward.
+a. All datasets are with the form of 'txt' file. 
+
+b. The 1st row is the Entrez ID for all genes;
+
+c. From the 2nd row, each GO term and its genes' annotation values are included, segmented by ',';
+
+d. In the last row, each gene's class attribute value is included, segmented by ','.
+
+--------------------------------------------------------------------------------------------------
+
+1. Wan C, Freitas AA (under review) An Empirical Evaluation of Hierarchical Feature Selection 
+Methods for Classification in Bioinformatics Datasets with Gene Ontology-based Features.
+
+2. Wan C, Freitas AA (2015) Two methods for constructing a gene ontology-based feature selection 
+network for a Bayesian network classifier and applications to datasets of aging related genes. 
+In: Proceedings of the Sixth ACM Conference on Bioinformatics, Computational Biology and Health 
+Informatics (ACM-BCB 2015), Atlanta, USA, pp 27-36.
+
