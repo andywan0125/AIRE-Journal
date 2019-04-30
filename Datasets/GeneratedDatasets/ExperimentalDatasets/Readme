@@ -14,7 +14,8 @@ d. In the last row, each gene's class attribute value is included, segmented by 
 --------------------------------------------------------------------------------------------------
 
 1. Wan C, Freitas AA (2018) An Empirical Evaluation of Hierarchical Feature Selection 
-Methods for Classification in Bioinformatics Datasets with Gene Ontology-based Features, Artificial Intelligence Review, 50(2), 201-240.
+Methods for Classification in Bioinformatics Datasets with Gene Ontology-based Features, 
+Artificial Intelligence Review, 50(2), 201-240.
 
 2. Wan C, Freitas AA (2015) Two methods for constructing a gene ontology-based feature selection 
 network for a Bayesian network classifier and applications to datasets of aging related genes. 
